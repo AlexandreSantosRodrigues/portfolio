@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexandre Santos | Analista de Dados | BI & Engenharia de Dados</title>
+<meta name="description" content="Analista de Dados: Power BI, SQL, Python, Databricks, BigQuery e AWS. Projetos, experiência e contato.">
+<meta property="og:title" content="Alexandre Santos | Analista de Dados">
+<meta property="og:image" content="perfil.jpg">
+<link rel="icon" href="perfil.jpg">
+<style>
+:root{--bg:#0a0a0a;--card:#101010;--line:#2a2a2a;--txt:#fafafa;--mut:#a1a1a1;--acc:#6366f1}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--txt);font:15px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.w{max-width:664px;margin:0 auto;padding:0 16px}
+nav{position:sticky;top:0;z-index:10;background:rgba(10,10,10,.85);backdrop-filter:blur(10px)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:52px}
+nav ul{display:flex;gap:6px;list-style:none;padding:0;font-size:14px;color:var(--mut)}
+nav li a{padding:6px 10px;border-radius:8px;display:block}
+nav li a:hover,nav li a.on{color:var(--txt)}
+.pill{display:flex;align-items:center;gap:8px;font-size:13px;border:1px solid var(--line);background:#141414;padding:7px 14px;border-radius:99px}
+.dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px #22c55e}
+header{display:flex;gap:24px;align-items:center;margin-top:44px}
+.av{position:relative;flex:none;width:124px;height:124px}
+.av img{width:100%;height:100%;object-fit:cover;border-radius:14px;border:1px solid var(--line);display:block}
+.av i{position:absolute;top:6px;right:6px;width:22px;height:22px;border-radius:6px;background:rgba(0,0,0,.65);display:grid;place-items:center;font-style:normal;font-size:12px}
+h1{font-size:25px;line-height:1.2;letter-spacing:-.3px}
+.hd p{margin-top:6px;font-size:13px;color:var(--mut)}
+.hd .b{color:var(--txt);font-weight:600;font-size:14px}
+ul.bl{list-style:none;padding:0;margin:34px 0 0;display:grid;gap:10px;color:var(--mut)}
+ul.bl li{display:flex;gap:14px;align-items:flex-start}
+ul.bl li:before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:#555;margin-top:9px}
+ul.bl b{color:var(--txt);font-weight:600}
+hr{border:0;height:1px;margin:30px 0;background:linear-gradient(90deg,transparent,#333,transparent)}
+.dash{border:1px dashed var(--line);background:var(--card)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sc{display:flex;align-items:center;gap:10px;padding:12px}
+.ic{flex:none;width:36px;height:36px;border-radius:10px;background:#1c1c1c;display:grid;place-items:center;font-weight:800;font-size:15px}
+.sc div{flex:1;min-width:0;line-height:1.3}.sc b{font-size:13px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sc small{color:var(--mut);font-size:12px}
+.bt{font-size:12px;font-weight:600;padding:5px 10px;border-radius:5px;white-space:nowrap;background:#262626;border:1px solid var(--line)}
+.bt.p{background:var(--acc);border-color:var(--acc)}
+.icons{display:flex;gap:8px;align-items:center;margin-top:18px;flex-wrap:wrap}
+.icons a{height:30px;min-width:30px;padding:0 9px;display:grid;place-items:center;font-size:12px;font-weight:700;background:#161616;border:1px solid var(--line);border-radius:6px}
+.icons a:hover,.bt:hover{border-color:#666}
+.icons span{width:1px;height:16px;background:var(--acc)}
+.t{display:inline-block;position:relative;font-size:16px;font-weight:500;padding:9px 12px;margin:36px 0 18px;background:
+ linear-gradient(#ddd,#ddd) top left/8px 2px no-repeat,linear-gradient(#ddd,#ddd) top left/2px 8px no-repeat,
+ linear-gradient(#ddd,#ddd) top right/8px 2px no-repeat,linear-gradient(#ddd,#ddd) top right/2px 8px no-repeat,
+ linear-gradient(#ddd,#ddd) bottom left/8px 2px no-repeat,linear-gradient(#ddd,#ddd) bottom left/2px 8px no-repeat,
+ linear-gradient(#ddd,#ddd) bottom right/8px 2px no-repeat,linear-gradient(#ddd,#ddd) bottom right/2px 8px no-repeat}
+.mq{overflow:hidden;mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);margin-bottom:10px}
+.tr{display:flex;gap:26px;width:max-content;animation:m 38s linear infinite;color:var(--mut);font-size:14px;font-weight:500}
+.mq:nth-of-type(2) .tr{animation-direction:reverse}
+.tr span{display:flex;align-items:center;gap:8px;white-space:nowrap}.tr span:before{content:"";width:8px;height:8px;border-radius:2px;background:var(--c)}
+@keyframes m{to{transform:translateX(-50%)}}
+.job{display:flex;gap:14px;padding:16px;border-top:1px dashed var(--line)}
+.job:first-child{border:0}
+.job .ic{width:44px;height:44px;border-radius:50%;background:#fff;color:#000;font-size:13px}
+.job h3{font-size:15px}.job small{color:var(--mut);font-size:12.5px}
+.job ul{margin:8px 0 0 16px;color:var(--mut);font-size:13.5px}.job li{margin-bottom:3px}
+.fl{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.fl button{font:inherit;font-size:13px;color:var(--mut);background:#141414;border:1px solid var(--line);padding:5px 12px;border-radius:99px;cursor:pointer}
+.fl button.on{background:var(--txt);color:#000;border-color:var(--txt)}
+.gr{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pr{padding:14px;display:flex;flex-direction:column;gap:6px;transition:.2s}
+.pr:hover{border-color:#666;transform:translateY(-2px)}
+.pr small{color:var(--acc);font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.pr h3{font-size:14.5px}.pr p{font-size:13px;color:var(--mut);flex:1}.pr em{font-style:normal;font-size:12px}
+.ed{padding:14px 16px;display:grid;gap:10px;color:var(--mut);font-size:13.5px}.ed b{color:var(--txt)}
+footer{text-align:center;color:var(--mut);font-size:12.5px;padding:50px 0 40px}
+@media(max-width:560px){header{flex-direction:column;align-items:flex-start}.two,.gr{grid-template-columns:1fr}nav ul li:nth-child(n+4){display:none}}
+</style>
+</head>
+<body>
+<nav><div class="w">
+  <ul><li><a class="on" href="#top">Home</a></li><li><a href="#projetos">Projetos</a></li><li><a href="#curriculo">Currículo</a></li><li><a href="#contato">Contato</a></li></ul>
+</div></nav>
+
+<main class="w" id="top">
+<header>
+  <div class="av"><img src="perfil.jpg" alt="Alexandre Santos"><i>📊</i></div>
+  <div class="hd">
+    <h1>Alexandre Santos 📈</h1>
+    <p class="mono">alexandresanto134@gmail.com</p>
+    <p class="b" style="margin-top:12px">Analista de Dados · BI · Engenharia de Dados</p>
+    <p class="mono">📍 Rio de Janeiro, Brasil &nbsp;·&nbsp; ⏱ <span id="clock">--:--:--</span></p>
+  </div>
+</header>
+
+<ul class="bl">
+  <li><span>Olá, sou <b>Analista de Dados</b> com foco em <b>Power BI, SQL e Python</b>.</span></li>
+  <li><span>Conecto <b>finanças e contabilidade</b> à tecnologia: automação, qualidade de dados e KPIs padronizados.</span></li>
+  <li><span>Sempre <b>construindo</b>, <b>aprendendo</b> e transformando dados em decisões: Databricks, AWS, GCP e IA.</span></li>
+</ul>
+<hr>
+
+<div class="two">
+  <div class="dash sc"><div class="ic" style="background:#0a66c2">in</div><div><b>Alexandre Santos</b><small>Analista de Dados</small></div><a class="bt p" href="https://www.linkedin.com/in/alexandresantosdata" target="_blank" rel="noopener">Conectar</a></div>
+  <div class="dash sc"><div class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div><div><b>AlexandreSantosRodrigues</b></div><a class="bt p" href="https://github.com/AlexandreSantosRodrigues" target="_blank" rel="noopener">Seguir</a></div>
+</div>
+<div class="icons">
+  <a href="https://www.linkedin.com/in/alexandresantosdata" target="_blank" rel="noopener" title="LinkedIn">in</a>
+  <a href="https://github.com/AlexandreSantosRodrigues" target="_blank" rel="noopener" title="GitHub"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+  <a href="https://wa.me/5521992341639" target="_blank" rel="noopener" title="WhatsApp">WA</a>
+</div>
+
+<div class="t">Minhas Skills</div>
+<div class="mq"><div class="tr" id="r1"></div></div>
+<div class="mq"><div class="tr" id="r2"></div></div>
+
+<div class="t" id="curriculo">Experiência</div>
+<div class="dash">
+  <div class="job"><div class="ic">R4</div><div><h3>Analista de Dados · Grupo R4</h3><small>Nov 2025 – Atual</small>
+    <ul><li>Automação da conferência de extratos: <b style="color:#fff">-96%</b> no tempo de conciliação bancária.</li><li>Dashboards Power BI: <b style="color:#fff">-40%</b> no tempo de análise financeira.</li><li>Pipelines com Python, Pandas e Regex: 6h/mês economizadas.</li><li>Validação financeira (-14% erros), controles em ERP (-22% retrabalho), deduplicação de bases (+18% precisão) e mapeamentos padronizados (-30% inconsistências).</li></ul></div></div>
+  <div class="job"><div class="ic">R4</div><div><h3>Assistente de Contabilidade · Grupo R4</h3><small>Dez 2022 – Nov 2025</small>
+    <ul><li>Ativo imobilizado em SAP/SCAF: -28% de divergências.</li><li>Conciliações em Excel e macros: fechamento 2 dias mais rápido e 12h/mês ganhas.</li><li>Relatórios gerenciais para a diretoria e apoio a auditorias (-15% não conformidades).</li></ul></div></div>
+  <div class="job"><div class="ic">TV</div><div><h3>Copywriter · Tânia Vianna</h3><small>Ago – Out 2023</small>
+    <ul><li>Conteúdo orientado por dados: +62% leads qualificados e +130% inscrições em webinars.</li></ul></div></div>
+  <div class="job"><div class="ic">GLP</div><div><h3>Aprendiz · GLP Gás</h3><small>Jan – Nov 2022</small>
+    <ul><li>KPIs logísticos em Excel: -27% falhas de planejamento e -18% atrasos de entrega.</li></ul></div></div>
+  <div class="job"><div class="ic">$</div><div><h3>Tesoureiro · Instituição religiosa</h3><small>Jan 2020 – Jun 2021</small>
+    <ul><li>Fluxo de caixa, projeções com erro &lt;5% e liquidez corrente acima de 1,5x.</li></ul></div></div>
+</div>
+
+<div class="t">Formação</div>
+<div class="dash ed">
+  <div><b>Pós-graduação em Ciência de Dados e IA</b> · UNINTER (2025)</div>
+  <div><b>Pós-graduação em Engenharia de Computação</b> · UNINTER (2025)</div>
+  <div><b>Bacharelado em Contabilidade e Finanças</b> · Estácio (2021–2024)</div>
+  <div><b>Certificações:</b> Google Data Analytics · Statistical Analysis Fundamentals using Excel</div>
+</div>
+
+<div class="t" id="projetos">Projetos</div>
+<div class="fl" id="fl"></div>
+<div class="gr" id="gr"></div>
+
+<div class="t" id="contato">Contato</div>
+<div class="dash ed">
+  <div>Aberto a oportunidades em Data Analytics, BI e Engenharia de Dados.</div>
+  <div><b>E-mail:</b> <a href="mailto:alexandresanto134@gmail.com" style="color:var(--acc)">alexandresanto134@gmail.com</a> · <b>WhatsApp:</b> (21) 99234-1639</div>
+</div>
+</main>
+<footer>© <span id="y"></span> Alexandre Santos · Feito no Rio de Janeiro</footer>
+
+<script>
+const S1=[["Power BI","#f2c811"],["DAX","#f2c811"],["Power Query","#f2c811"],["SQL","#38bdf8"],["Python","#3776ab"],["Pandas","#818cf8"],["Databricks","#ff3621"],["Spark SQL","#e25a1c"],["Delta Lake","#00add4"],["BigQuery","#4285f4"],["Looker Studio","#4285f4"]];
+const S2=[["AWS","#ff9900"],["GCP","#4285f4"],["ETL","#22c55e"],["Star Schema","#a78bfa"],["Medallion","#fbbf24"],["Excel","#21a366"],["Google Sheets","#34a853"],["SAP","#0faaff"],["Selenium","#43b02a"],["Regex","#f472b6"],["Qualidade de Dados","#2dd4bf"],["IA / LLMs","#c084fc"]];
+const row=(id,a)=>document.getElementById(id).innerHTML=[...a,...a].map(s=>`<span style="--c:${s[1]}">${s[0]}</span>`).join("");
+row("r1",S1);row("r2",S2);
+
+const U="https://github.com/AlexandreSantosRodrigues/";
+const P=[
+["lakehouse-ruptura-estoque-rj","Lakehouse de Ruptura de Estoque","Databricks, Spark SQL, Delta Lake, Medallion e Star Schema para priorizar riscos no varejo.","Engenharia"],
+["hr-analytics-turnover-databricks","HR Analytics: Turnover","Análise de turnover de colaboradores em Databricks.","Engenharia"],
+["logistics-lakehouse-analytics","Logistics Lakehouse","Lakehouse analítico para dados de logística.","Engenharia"],
+["databricks-cart-abandonment","Abandono de Carrinho","Análise de abandono de carrinho em Databricks.","Engenharia"],
+["databricks-unified-bi-accelerator-prot-tipo","Unified BI Accelerator","Protótipo de acelerador de BI em Databricks.","Engenharia"],
+["aws-data-pipeline","AWS Data Pipeline","Pipeline de dados construído na AWS.","Cloud"],
+["nl-to-sql","NL-to-SQL com LLMs","Perguntas em linguagem natural convertidas em SQL com LLMs.","IA"],
+["analise-sentimentos-google-maps","Sentimentos no Google Maps","Análise de sentimentos de avaliações do Google Maps.","IA"],
+["ETL-VAGAS-GUPY","ETL Vagas Gupy","Pipeline ETL de vagas da plataforma Gupy.","Engenharia"],
+["ga4-multi-touch-attribution","GA4 Multi-Touch Attribution","Modelos de atribuição multi-touch com GA4.","Análise"],
+["superstore-sales-dashboard","Superstore Sales Dashboard","Dashboard de vendas do dataset Superstore.","BI"],
+["sop-demand-forecast-dashboard","S&OP Demand Forecast","Dashboard de previsão de demanda para S&OP.","BI"],
+["telco-churn-sql-analysis","Telco Churn (SQL)","Análise de churn de telecom com SQL.","Análise"],
+["white-spots-rj","White Spots RJ","Oportunidades de mercado não atendidas no Rio de Janeiro.","Análise"],
+["Monitoramento_Brent","Monitoramento do Brent","Acompanhamento do preço do petróleo Brent.","Análise"],
+["Supply_Chain_Weather_Impact","Supply Chain & Clima","Impacto do clima na cadeia de suprimentos.","Análise"]];
+const fl=document.getElementById("fl"),gr=document.getElementById("gr");
+function show(c){
+  gr.innerHTML=P.filter(p=>c==="Todos"||p[3]===c).map(p=>`<a class="dash pr" href="${U+p[0]}" target="_blank" rel="noopener"><small>${p[3]}</small><h3>${p[1]}</h3><p>${p[2]}</p><em style="color:var(--mut)">Ver no GitHub ↗</em></a>`).join("");
+  [...fl.children].forEach(b=>b.classList.toggle("on",b.textContent===c));
+}
+["Todos",...new Set(P.map(p=>p[3]))].forEach(c=>{const b=document.createElement("button");b.textContent=c;b.onclick=()=>show(c);fl.appendChild(b)});
+show("Todos");
+const ck=()=>document.getElementById("clock").textContent=new Date().toLocaleTimeString("pt-BR",{timeZone:"America/Sao_Paulo"});
+ck();setInterval(ck,1000);
+document.getElementById("y").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
