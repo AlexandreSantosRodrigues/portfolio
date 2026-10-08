@@ -82,7 +82,7 @@ footer{text-align:center;color:var(--mut);font-size:12.5px;padding:50px 0 40px}
 @media(max-width:560px){header{flex-direction:column;align-items:flex-start}.two,.gr{grid-template-columns:1fr}nav ul li:nth-child(n+4){display:none}}
 
 /* Bando de pássaros */
-#flock{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;z-index:15;display:none;opacity:.9}
+#flock{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;z-index:-1;display:none;opacity:.55}
 :root:not([data-theme="light"]) #flock{filter:invert(1)}
 </style>
 </head>
@@ -245,7 +245,6 @@ btn.onclick=()=>{
 
 /* Bando de pássaros: toca uma vez e some */
 function flyFlock(){
-  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
   const f=document.getElementById("flock");
   f.src="passaros.gif?t="+Date.now();   // reinicia o GIF do primeiro quadro
   f.style.display="block";
