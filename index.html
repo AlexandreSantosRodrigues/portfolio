@@ -80,6 +80,13 @@ footer{text-align:center;color:var(--mut);font-size:12.5px;padding:50px 0 40px}
 @media(max-width:560px){#mascot{width:80px;height:80px;right:8px}}
 @media(max-width:700px){.pill{display:none}}
 @media(max-width:560px){header{flex-direction:column;align-items:flex-start}.two,.gr{grid-template-columns:1fr}nav ul li:nth-child(n+4){display:none}}
+
+/* Pássaro */
+#bird{position:fixed;top:0;left:0;width:56px;height:56px;pointer-events:none;z-index:15;display:none;will-change:transform;filter:drop-shadow(0 6px 6px rgba(0,0,0,.35))}
+#bird svg{width:100%;height:100%;overflow:visible;fill:var(--txt)}
+#bird .wing{transform-origin:30px 30px;animation:flap .32s ease-in-out infinite alternate}
+@keyframes flap{from{transform:scaleY(1)}to{transform:scaleY(.2)}}
+@media(max-width:560px){#bird{width:40px;height:40px}}
 </style>
 </head>
 <body>
@@ -153,6 +160,19 @@ footer{text-align:center;color:var(--mut);font-size:12.5px;padding:50px 0 40px}
 </div>
 </main>
 <button id="mascot" type="button" aria-label="Boop the Scout" hidden><span class="sq"><span class="ly"></span><span class="ly"></span></span></button>
+
+<div id="bird" aria-hidden="true">
+  <svg viewBox="0 0 60 60">
+    <polygon points="19,30 6,26 6,34"/>
+    <ellipse cx="30" cy="30" rx="13" ry="4.5"/>
+    <circle cx="42" cy="30" r="3.8"/>
+    <polygon points="45,28.5 51,30 45,31.5" fill="var(--acc)"/>
+    <path class="wing" d="M34 28 L24 4 L16 8 L26 29 Z"/>
+    <path class="wing" d="M34 32 L24 56 L16 52 L26 31 Z"/>
+  </svg>
+</div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><path id="birdPath"/></svg>
+
 <footer>© <span id="y"></span> Alexandre Santos · Feito no Rio de Janeiro</footer>
 
 <script>
@@ -235,6 +255,30 @@ btn.onclick=()=>{
   sq.animate(SQ,{duration:420,easing:"linear"});
 };
 })();
+
+/* Pássaro voando */
+function flyBird(){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  const W=innerWidth,H=innerHeight,bird=document.getElementById("bird"),path=document.getElementById("birdPath");
+  path.setAttribute("d",
+    `M ${W*.5} -60
+     C ${W*.25} ${H*.05}, ${W*.05} ${H*.25}, ${W*.08} ${H*.5}
+     C ${W*.1} ${H*.75}, ${W*.3} ${H*.9}, ${W*.5} ${H*.88}
+     C ${W*.75} ${H*.86}, ${W*.85} ${H*.4}, ${W+60} -60`);
+  const len=path.getTotalLength(),dur=7000;let t0=null;
+  bird.style.display="block";
+  function step(ts){
+    if(!t0)t0=ts;
+    const t=(ts-t0)/dur;
+    if(t>=1){bird.style.display="none";return}
+    const L=t*len,p=path.getPointAtLength(L),q=path.getPointAtLength(Math.min(L+1,len));
+    const ang=Math.atan2(q.y-p.y,q.x-p.x);
+    bird.style.transform=`translate(${p.x-28}px,${p.y-28}px) rotate(${ang}rad)`;
+    requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+setTimeout(flyBird,800);
 </script>
 </body>
 </html>
