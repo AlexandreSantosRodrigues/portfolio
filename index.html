@@ -6,6 +6,9 @@
 <title>Alexandre Santos | Analista de Dados | BI & Engenharia de Dados</title>
 <meta name="description" content="Analista de Dados: Power BI, SQL, Python, Databricks, BigQuery e AWS. Projetos, experiência e contato.">
 <meta property="og:title" content="Alexandre Santos | Analista de Dados">
+<meta property="og:description" content="Dados, BI e engenharia de dados: projetos com fontes, validações, resultados e limitações documentados.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
 <meta property="og:image" content="perfil.jpg">
 <link rel="icon" href="perfil.jpg">
 <style>
@@ -36,12 +39,12 @@ ul.bl{list-style:none;padding:0;margin:34px 0 0;display:grid;gap:10px;color:var(
 ul.bl li{display:flex;gap:14px;align-items:flex-start}
 ul.bl li:before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--dotb);margin-top:9px}
 ul.bl b{color:var(--txt);font-weight:600}
-hr{border:0;height:1px;margin:30px 0;background:linear-gradient(90deg,transparent,var(--hr),transparent)}
+hr{border:0;height:1px;margin:30px 0;background:var(--hr)}
 .dash{border:1px dashed var(--line);background:var(--card)}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .sc{display:flex;align-items:center;gap:10px;padding:12px}
 .ic{flex:none;width:36px;height:36px;border-radius:10px;background:var(--c3);display:grid;place-items:center;font-weight:800;font-size:15px}
-.sc div{flex:1;min-width:0;line-height:1.3}.sc b{font-size:13px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sc small{color:var(--mut);font-size:12px}
+.sc>div:not(.ic){flex:1;min-width:0;line-height:1.3}.sc b{font-size:13px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sc small{color:var(--mut);font-size:12px}
 .bt{font-size:12px;font-weight:600;padding:5px 10px;border-radius:5px;white-space:nowrap;background:var(--c4);border:1px solid var(--line)}
 .bt.p{background:var(--acc);border-color:var(--acc);color:#fff}
 .icons{display:flex;gap:8px;align-items:center;margin-top:18px;flex-wrap:wrap}
@@ -79,23 +82,35 @@ footer{text-align:center;color:var(--mut);font-size:12.5px;padding:50px 0 40px}
 #mascot .ly{position:absolute;inset:0;background-size:300% 300%;background-repeat:no-repeat}
 @media(max-width:560px){#mascot{width:80px;height:80px;right:8px}}
 @media(max-width:700px){.pill{display:none}}
-@media(max-width:560px){header{flex-direction:column;align-items:flex-start}.two,.gr{grid-template-columns:1fr}nav ul li:nth-child(n+4){display:none}}
+@media(max-width:560px){header{flex-direction:column;align-items:flex-start}.two,.gr{grid-template-columns:1fr}nav li a{padding:10px 7px}nav ul{gap:0;font-size:13px}}
 
 /* Pássaros desenhados e animados em Canvas, sem imagens externas. */
 body{position:relative;isolation:isolate}
 main,footer{position:relative;z-index:1}
 #flock{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+/* Leitura, navegação por teclado e movimento reduzido. */
+a:focus-visible,button:focus-visible{outline:2px solid var(--txt);outline-offset:4px}
+.skip{position:fixed;left:12px;top:-100px;padding:10px 16px;background:var(--txt);color:var(--bg);z-index:50}.skip:focus{top:8px}
+.section-note,.project-count{font-size:13px;color:var(--mut);margin-bottom:16px}
+.catalog-title{font-size:15px;margin:28px 0 14px}
+.project-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.project-links .bt{white-space:normal;min-height:40px;display:flex;align-items:center}
+.pr .evidence{font-size:12px;color:var(--txt);flex:0;margin-top:6px}
+.featured-label{font-size:11px;font-weight:600;color:var(--txt)}
+.fl button{min-height:44px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tr{animation:none;width:auto;flex-wrap:wrap;gap:10px 20px}.mq{mask:none}.pr{transition:none}.pr:hover{transform:none}#flock{display:none}}
 </style>
 </head>
 <body>
-<nav><div class="w">
+<a class="skip" href="#top">Ir para o conteúdo</a>
+<nav aria-label="Navegação principal"><div class="w">
   <ul><li><a class="on" href="#top">Home</a></li><li><a href="#projetos">Projetos</a></li><li><a href="#curriculo">Currículo</a></li><li><a href="#contato">Contato</a></li></ul>
   <button id="th" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema"></button>
 </div></nav>
 
 <main class="w" id="top">
 <header>
-  <div class="av"><img src="perfil.jpg" alt="Alexandre Santos"><i>📊</i></div>
+  <div class="av"><img src="perfil.jpg" alt="Alexandre Santos" width="124" height="124"><i>📊</i></div>
   <div class="hd">
     <h1>Alexandre Santos 📈</h1>
     <p class="mono">alexandresanto134@gmail.com</p>
@@ -121,15 +136,15 @@ main,footer{position:relative;z-index:1}
   <a href="https://wa.me/5521992341639" target="_blank" rel="noopener" title="WhatsApp">WA</a>
 </div>
 
-<div class="t">Minhas Skills</div>
+<h2 class="t">Habilidades técnicas</h2>
 <div class="mq"><div class="tr" id="r1"></div></div>
 <div class="mq"><div class="tr" id="r2"></div></div>
 
-<div class="t" id="curriculo">Experiência</div>
+<h2 class="t" id="curriculo">Experiência</h2>
 <div class="dash">
-  <div class="job"><div class="ic">R4</div><div><h3>Analista de Dados · Grupo R4</h3><small>Nov 2025 – Atual</small>
+  <div class="job"><div class="ic">CP</div><div><h3>Analista de Dados · Fundação COPPETEC</h3><small>Nov 2025 – Atual · Terceirizado pela R4 Serviços Contábeis</small>
     <ul><li>Automação da conferência de extratos: <b style="color:var(--txt)">-96%</b> no tempo de conciliação bancária.</li><li>Dashboards Power BI: <b style="color:var(--txt)">-40%</b> no tempo de análise financeira.</li><li>Pipelines com Python, Pandas e Regex: 6h/mês economizadas.</li><li>Validação financeira (-14% erros), controles em ERP (-22% retrabalho), deduplicação de bases (+18% precisão) e mapeamentos padronizados (-30% inconsistências).</li></ul></div></div>
-  <div class="job"><div class="ic">R4</div><div><h3>Assistente de Contabilidade · Grupo R4</h3><small>Dez 2022 – Nov 2025</small>
+  <div class="job"><div class="ic">CP</div><div><h3>Assistente de Contabilidade · Fundação COPPETEC</h3><small>Dez 2022 – Nov 2025 · Terceirizado pela R4 Serviços Contábeis</small>
     <ul><li>Ativo imobilizado em SAP/SCAF: -28% de divergências.</li><li>Conciliações em Excel e macros: fechamento 2 dias mais rápido e 12h/mês ganhas.</li><li>Relatórios gerenciais para a diretoria e apoio a auditorias (-15% não conformidades).</li></ul></div></div>
   <div class="job"><div class="ic">TV</div><div><h3>Copywriter · Tânia Vianna</h3><small>Ago – Out 2023</small>
     <ul><li>Conteúdo orientado por dados: +62% leads qualificados e +130% inscrições em webinars.</li></ul></div></div>
@@ -139,25 +154,30 @@ main,footer{position:relative;z-index:1}
     <ul><li>Fluxo de caixa, projeções com erro &lt;5% e liquidez corrente acima de 1,5x.</li></ul></div></div>
 </div>
 
-<div class="t">Formação</div>
+<h2 class="t">Formação</h2>
 <div class="dash ed">
-  <div><b>Pós-graduação em Ciência de Dados e IA</b> · UNINTER (2025)</div>
-  <div><b>Pós-graduação em Engenharia de Computação</b> · UNINTER (2025)</div>
+  <div><b>Pós-graduação em Ciência de Dados e IA</b> · UNINTER · Concluída em set/2025</div>
+  <div><b>Pós-graduação em Engenharia de Computação</b> · UNINTER · Concluída em out/2025</div>
   <div><b>Bacharelado em Contabilidade e Finanças</b> · Estácio (2021–2024)</div>
   <div><b>Certificações:</b> Google Data Analytics · Statistical Analysis Fundamentals using Excel</div>
 </div>
 
-<div class="t" id="projetos">Projetos</div>
-<div class="fl" id="fl"></div>
+<h2 class="t" id="projetos">Projetos</h2>
+<p class="section-note">Seleção com dados públicos e bases de estudo. Resultados, premissas e limitações estão documentados nos repositórios.</p>
+<div class="gr" id="featured"></div>
+<h3 class="catalog-title">Explorar todos os projetos</h3>
+<div class="fl" id="fl" role="group" aria-label="Filtrar projetos por área"></div>
+<p class="project-count" id="project-count" role="status" aria-live="polite"></p>
 <div class="gr" id="gr"></div>
+<noscript><p>Ative o JavaScript para filtrar os projetos ou <a href="https://github.com/AlexandreSantosRodrigues?tab=repositories">veja os repositórios no GitHub</a>.</p></noscript>
 
-<div class="t" id="contato">Contato</div>
+<h2 class="t" id="contato">Contato</h2>
 <div class="dash ed">
   <div>Aberto a oportunidades em Data Analytics, BI e Engenharia de Dados.</div>
   <div><b>E-mail:</b> <a href="mailto:alexandresanto134@gmail.com" style="color:var(--acc)">alexandresanto134@gmail.com</a> · <b>WhatsApp:</b> (21) 99234-1639</div>
 </div>
 </main>
-<button id="mascot" type="button" aria-label="Boop the Scout" hidden><span class="sq"><span class="ly"></span><span class="ly"></span></span></button>
+<button id="mascot" type="button" aria-label="Interagir com o mascote Scout" hidden><span class="sq"><span class="ly"></span><span class="ly"></span></span></button>
 
 <canvas id="flock" aria-hidden="true"></canvas>
 
@@ -166,33 +186,49 @@ main,footer{position:relative;z-index:1}
 <script>
 const S1=[["Power BI","#f2c811"],["DAX","#f2c811"],["Power Query","#f2c811"],["SQL","#38bdf8"],["Python","#3776ab"],["Pandas","#818cf8"],["Databricks","#ff3621"],["Spark SQL","#e25a1c"],["Delta Lake","#00add4"],["BigQuery","#4285f4"],["Looker Studio","#4285f4"]];
 const S2=[["AWS","#ff9900"],["GCP","#4285f4"],["ETL","#22c55e"],["Star Schema","#a78bfa"],["Medallion","#fbbf24"],["Excel","#21a366"],["Google Sheets","#34a853"],["SAP","#0faaff"],["Selenium","#43b02a"],["Regex","#f472b6"],["Qualidade de Dados","#2dd4bf"],["IA / LLMs","#c084fc"]];
-const row=(id,a)=>document.getElementById(id).innerHTML=[...a,...a].map(s=>`<span style="--c:${s[1]}">${s[0]}</span>`).join("");
+const row=(id,a)=>document.getElementById(id).innerHTML=[...a,...a].map((s,i)=>`<span${i>=a.length?' aria-hidden="true"':""} style="--c:${s[1]}">${s[0]}</span>`).join("");
 row("r1",S1);row("r2",S2);
 
 const U="https://github.com/AlexandreSantosRodrigues/";
 const P=[
-["lakehouse-ruptura-estoque-rj","Lakehouse de Ruptura de Estoque","Databricks, Spark SQL, Delta Lake, Medallion e Star Schema para priorizar riscos no varejo.","Engenharia"],
+["oil-gas-production-lakehouse","Oil & Gas Production Lakehouse — ANP","Databricks, Delta Lake e modelo dimensional: 315.356 registros de produção/injeção e 17.817 intervenções na Gold. Execução por notebooks, com auditoria entre camadas.","Engenharia"],
+["fuel-price-intelligence-rj","Fuel Price Intelligence RJ","83.441 registros de preços no RJ, pipeline Python e avaliação de quatro abordagens com backtesting temporal. O último preço conhecido superou os modelos mais complexos.","Ciência de Dados"],
+["Netflix-stock-analysis","NFLX Insight — Netflix","Python/Colab, preços e demonstrações da SEC: auditoria, avaliação temporal e custos de transação. Ridge não superou o baseline de retorno zero no teste.","Ciência de Dados"],
+["lakehouse-ruptura-estoque-rj","Lakehouse de Ruptura de Estoque","Databricks SQL, Delta Lake e Star Schema sobre TPCH. Score heurístico de risco de abastecimento em cenário simulado; não comprova ruptura real.","Engenharia"],
 ["hr-analytics-turnover-databricks","HR Analytics: Turnover","Análise de turnover de colaboradores em Databricks.","Engenharia"],
 ["logistics-lakehouse-analytics","Logistics Lakehouse","Lakehouse analítico para dados de logística.","Engenharia"],
 ["databricks-cart-abandonment","Abandono de Carrinho","Análise de abandono de carrinho em Databricks.","Engenharia"],
 ["databricks-unified-bi-accelerator-prot-tipo","Unified BI Accelerator","Protótipo de acelerador de BI em Databricks.","Engenharia"],
-["aws-data-pipeline","AWS Data Pipeline","Pipeline de dados construído na AWS.","Cloud"],
+["aws-data-pipeline","AWS Data Pipeline","Triagem de arquivos CSV com Python, S3, Lambda, SQS e SNS. Código das funções e exemplos de arquivos válidos e inválidos.","Cloud"],
 ["nl-to-sql","NL-to-SQL com LLMs","Perguntas em linguagem natural convertidas em SQL com LLMs.","IA"],
 ["analise-sentimentos-google-maps","Sentimentos no Google Maps","Análise de sentimentos de avaliações do Google Maps.","IA"],
 ["ETL-VAGAS-GUPY","ETL Vagas Gupy","Pipeline ETL de vagas da plataforma Gupy.","Engenharia"],
-["ga4-multi-touch-attribution","GA4 Multi-Touch Attribution","Modelos de atribuição multi-touch com GA4.","Análise"],
-["superstore-sales-dashboard","Superstore Sales Dashboard","Dashboard de vendas do dataset Superstore.","BI"],
-["sop-demand-forecast-dashboard","S&OP Demand Forecast","Dashboard de previsão de demanda para S&OP.","BI"],
+["ga4-multi-touch-attribution","GA4 Multi-Touch Attribution","BigQuery/SQL: auditoria de 4,3 milhões de eventos, 5.372 compras canônicas e cinco modelos de atribuição. Conversões e receita reconciliadas; sem inferência causal.","Análise"],
+["superstore-sales-dashboard","Superstore Sales Dashboard","SQL e PySpark no Databricks: 9.994 itens reconciliados, análise de margem/descontos e avaliação temporal de previsão. Dashboard com contrato de dados.","BI"],
+["sop-demand-forecast-dashboard","S&OP Demand Forecast","Forecast e realizado em Google Sheets e Looker Studio: média móvel ponderada e WAPE. Base fictícia de 24 meses e três linhas de lubrificantes.","BI"],
 ["telco-churn-sql-analysis","Telco Churn (SQL)","Análise de churn de telecom com SQL.","Análise"],
 ["white-spots-rj","White Spots RJ","Oportunidades de mercado não atendidas no Rio de Janeiro.","Análise"],
 ["Monitoramento_Brent","Monitoramento do Brent","Acompanhamento do preço do petróleo Brent.","Análise"],
 ["Supply_Chain_Weather_Impact","Supply Chain & Clima","Impacto do clima na cadeia de suprimentos.","Análise"]];
+const F=[
+  {slug:"oil-gas-production-lakehouse",evidence:"315.356 registros de produção/injeção",url:U+"oil-gas-production-lakehouse/blob/main/docs/images/dashboard-anp.png",label:"Ver imagem do dashboard"},
+  {slug:"fuel-price-intelligence-rj",evidence:"83.441 registros · 32 municípios",url:"https://fuel-price-intelligence-rj.streamlit.app/",label:"Abrir aplicação"},
+  {slug:"ga4-multi-touch-attribution",evidence:"5 modelos · 5.372 compras canônicas",url:"https://alexandresantosrodrigues.github.io/ga4-multi-touch-attribution/",label:"Abrir dashboard"},
+  {slug:"superstore-sales-dashboard",evidence:"9.994 itens · vendas e lucro reconciliados",url:"https://alexandresantosrodrigues.github.io/superstore-sales-dashboard/dashboard/",label:"Abrir dashboard"}
+];
 const fl=document.getElementById("fl"),gr=document.getElementById("gr");
-function show(c){
-  gr.innerHTML=P.filter(p=>c==="Todos"||p[3]===c).map(p=>`<a class="dash pr" href="${U+p[0]}" target="_blank" rel="noopener"><small>${p[3]}</small><h3>${p[1]}</h3><p>${p[2]}</p><em style="color:var(--mut)">Ver no GitHub ↗</em></a>`).join("");
-  [...fl.children].forEach(b=>b.classList.toggle("on",b.textContent===c));
+const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function card(p,f){
+  return `<article class="dash pr">${f?'<span class="featured-label">Em destaque</span>':""}<small>${escapeHTML(p[3])}</small><h3>${escapeHTML(p[1])}</h3><p>${escapeHTML(p[2])}</p>${f?`<p class="evidence">${escapeHTML(f.evidence)}</p>`:""}<div class="project-links"><a class="bt" href="${U+p[0]}" target="_blank" rel="noopener" aria-label="Ver ${escapeHTML(p[1])} no GitHub">Repositório ↗</a>${f?`<a class="bt" href="${f.url}" target="_blank" rel="noopener" aria-label="${f.label}: ${escapeHTML(p[1])}">${f.label} ↗</a>`:""}</div></article>`;
 }
-["Todos",...new Set(P.map(p=>p[3]))].forEach(c=>{const b=document.createElement("button");b.textContent=c;b.onclick=()=>show(c);fl.appendChild(b)});
+document.getElementById("featured").innerHTML=F.map(f=>card(P.find(p=>p[0]===f.slug),f)).join("");
+function show(c){
+  const projects=P.filter(p=>c==="Todos"||p[3]===c);
+  gr.innerHTML=projects.map(p=>card(p)).join("");
+  document.getElementById("project-count").textContent=`${projects.length} ${projects.length===1?"projeto":"projetos"} · ${c}`;
+  [...fl.children].forEach(b=>{const active=b.textContent===c;b.classList.toggle("on",active);b.setAttribute("aria-pressed",String(active))});
+}
+["Todos",...new Set(P.map(p=>p[3]))].forEach(c=>{const b=document.createElement("button");b.type="button";b.textContent=c;b.onclick=()=>show(c);fl.appendChild(b)});
 show("Todos");
 const ck=()=>document.getElementById("clock").textContent=new Date().toLocaleTimeString("pt-BR",{timeZone:"America/Sao_Paulo"});
 ck();setInterval(ck,1000);
@@ -323,9 +359,11 @@ btn.onclick=()=>{
   }
   function sync(){
     cancelAnimationFrame(raf);raf=0;last=null;
-    if(!document.hidden)raf=requestAnimationFrame(tick);
+    if(!document.hidden&&!motion.matches)raf=requestAnimationFrame(tick);
     else render();
   }
+  const motion=matchMedia("(prefers-reduced-motion: reduce)");
+  motion.addEventListener("change",sync);
   document.addEventListener("visibilitychange",sync);
   window.addEventListener("resize",resize,{passive:true});
   updateTheme();resize();sync();
